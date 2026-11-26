@@ -1,10 +1,9 @@
 :root { --bg: #100D19; --panel: #1C1728; --lilac: #A970FF; --lilac-light: #D4B5FF; --text: #fff; --muted: #A0A0B0; --ok: #4ADE80; --err: #F87171; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; overflow: hidden; }
+body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; overflow: hidden; }
 .loader-overlay { position: fixed; inset: 0; background: var(--bg); z-index: 9999; display: flex; justify-content: center; align-items: center; }
 .loader-content { text-align: center; } .loader-content h1 { font-size: 3rem; color: var(--lilac); margin-bottom: 1rem; }
 .primary-btn { background: var(--lilac); color: #fff; border: none; padding: 12px 24px; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600; margin-top: 1rem; }
-.primary-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .sidebar { width: 220px; background: var(--panel); padding: 2rem 1rem; display: flex; flex-direction: column; border-right: 1px solid #2A2438; }
 .logo { font-size: 1.5rem; font-weight: 700; color: var(--lilac); margin-bottom: 2rem; } .logo span { color: var(--muted); font-size: 0.9rem; }
 .nav-item { padding: 12px 16px; margin-bottom: 8px; border-radius: 8px; cursor: pointer; color: var(--muted); transition: 0.2s; }

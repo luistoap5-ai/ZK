@@ -2,20 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#100D19">
-    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>ZK Music Academy</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="loader" class="loader-overlay">
         <div class="loader-content">
             <h1>ZK</h1>
-            <p>Cargando muestras de piano real (Salamander Grand Piano)...</p>
-            <button id="start-btn" class="primary-btn" disabled>Iniciar ZK</button>
+            <p>Iniciando motor de piano realista...</p>
+            <button id="start-btn" class="primary-btn">Iniciar ZK</button>
         </div>
     </div>
     <nav class="sidebar">
@@ -31,21 +29,21 @@
     <main class="content">
         <header class="top-bar"><h2 id="page-title">Academia</h2></header>
         <section id="view-academy" class="view active">
-            <div class="card"><h3>Módulo 1: Conocimiento del Teclado</h3><p>Aprende a identificar cada tecla en tu Arturia MicroLab MK3.</p><button class="secondary-btn" onclick="alert('Lección cargada')">Comenzar</button></div>
+            <div class="card"><h3>Módulo 1: Conocimiento del Teclado</h3><p>Aprende a identificar cada tecla en tu Arturia MicroLab MK3.</p><button class="secondary-btn">Comenzar</button></div>
         </section>
         <section id="view-piano" class="view">
             <div class="piano-controls">
-                <button id="record-btn" class="secondary-btn">⏺ Grabar Audio Real</button>
+                <button id="record-btn" class="secondary-btn">⏺ Grabar</button>
                 <button id="stop-record-btn" class="secondary-btn hidden">⏹ Detener</button>
                 <span id="midi-status" class="status-indicator">MIDI: Desconectado</span>
             </div>
             <div class="piano-container" id="piano-container"></div>
         </section>
         <section id="view-composer" class="view">
-            <div class="card"><h3>Progresiones</h3><button class="primary-btn" onclick="app.playProgression()">Escuchar I-V-vi-IV (Piano Real)</button></div>
+            <div class="card"><h3>Progresiones</h3><button class="primary-btn" onclick="app.playProgression()">Escuchar I-V-vi-IV</button></div>
         </section>
         <section id="view-ear" class="view">
-            <div class="card"><h3>Entrenamiento Auditivo</h3><p>Escucha la nota del piano real y selecciónala.</p>
+            <div class="card"><h3>Entrenamiento Auditivo</h3><p>Escucha la nota y selecciónala.</p>
                 <button id="play-ear-btn" class="primary-btn">🔊 Reproducir Nota</button>
                 <div class="note-options" id="note-options"></div>
                 <p id="ear-feedback" class="feedback"></p>
@@ -53,9 +51,9 @@
         </section>
         <section id="view-library" class="view">
             <div class="card"><h3>Copia de Seguridad</h3>
-                <button class="secondary-btn" onclick="app.exportData()">Exportar Datos (JSON)</button>
+                <button class="secondary-btn" onclick="app.exportData()">Exportar Datos</button>
                 <input type="file" id="import-file" style="display:none" onchange="app.importData(this)">
-                <button class="secondary-btn" onclick="document.getElementById('import-file').click()">Restaurar Datos</button>
+                <button class="secondary-btn" onclick="document.getElementById('import-file').click()">Restaurar</button>
             </div>
         </section>
     </main>
@@ -66,9 +64,7 @@
         <div class="nav-item" data-view="ear">👂</div>
         <div class="nav-item" data-view="library">💾</div>
     </nav>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js"></script>
-    <script src="https://esm.sh/tone@14.7.77"></script>
-    <script src="audio.js"></script>
+    <script src="piano.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
